@@ -2,26 +2,42 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
 
+## Update NPM globally
+
+npm install -g npm
+
+## Install node.js v14.15.0 or higher 
+
+`https://nodejs.org/en/download/`
+
+##Install angular-cli globally
+
+npm install -g @angular/cli
+
+##Install packages
+
+npm install
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+##issues
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Single planet API always returns same info (for Kashyyyk)
 
-## Build
+##questions
+What are you looking to achieve in your new role?
+- new challenge after 7+ years work with single customer.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+What experience of Angular do you have?
+- experience with Angular about 5 years from angular js to 10(current version on projects).
 
-## Running unit tests
+Experience of testing frameworks? Unit and Automation?
+- Jest and Karma + Jasmine.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Outside of work do you have any pet projects?
+- betborg.com - football statistics service, collects football matches history of top European leagues to show statistic based on user settings.
+  frontend part (angular 10): 100% my code.
+  backend part (ASP.NET Core 2.0): asked my friend to implement, can provide small changes.
+  up and running on AWS: asked devops to up, can update build by command.

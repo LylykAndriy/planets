@@ -1,0 +1,12 @@
+<div class="header">Planets</div>
+<div class="card-container">
+  <ng-container *ngIf="planetsList.length > 0">
+    <div class="card" *ngFor="let planet of planetsList" [routerLink]="['/planet', planet.name]">
+      <img [src]="planet.image" alt="planet" width="70" height="70">
+      <div class="planet-item">{{planet.name}}</div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="planetsList.length === 0">
+    Loading in progress...
+  </ng-container>
+</div>

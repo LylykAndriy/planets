@@ -1,0 +1,20 @@
+<div class="planet-info-cont">
+  <div class="planet-header">{{planet.name}}</div>
+  <div class="planet-content">
+    <img [src]="planet.image" alt="planet" width="270" height="270">
+    <div class="planet-field-cont">
+      <div class="planet-field">
+        <span>Region:&nbsp;</span>
+        {{planet.region}}
+      </div>
+      <div class="planet-field">
+        <span>System:&nbsp;</span>
+        {{planet.system}}
+      </div>
+      <div class="planet-field">
+        <span>Description:&nbsp;</span>
+        {{planet.description}}
+      </div>
+    </div>
+  </div>
+</div>

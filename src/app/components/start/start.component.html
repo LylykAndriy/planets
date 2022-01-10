@@ -1,0 +1,14 @@
+<h3>Please enter your email address</h3>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <input
+    type="text"
+    formControlName="email"
+    [ngClass]="{ 'invalid-input': form.invalid }"
+  />
+  <br>
+  <div *ngIf="form.invalid" class="invalid">
+    Please enter a valid email address
+  </div>
+  <br>
+  <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
