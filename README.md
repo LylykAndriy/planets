@@ -22,11 +22,12 @@ npm install
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## issues
+## Issues
 
 Single planet API always returns same info (for Kashyyyk)
 
-## questions
+## Questions
+
 What are you looking to achieve in your new role?
 - new challenge after 7+ years work with single customer.
 
@@ -38,6 +39,6 @@ Experience of testing frameworks? Unit and Automation?
 
 Outside of work do you have any pet projects?
 - betborg.com - football statistics service, collects football matches history of top European leagues to show statistic based on user settings.
-  frontend part (angular 10): 100% my code.
-  backend part (ASP.NET Core 2.0): asked my friend to implement, can provide small changes.
-  up and running on AWS: asked devops to up, can update build by command.
+  Frontend part (angular 10): 100% my code.
+  Backend part (ASP.NET Core 2.0): asked my friend to implement, can provide small changes.
+  Up and running on AWS: asked devops to up, can update build by command.

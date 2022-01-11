@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PlanetsService } from "./services/planets.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'planets';
+
+  constructor(private planets: PlanetsService, private router: Router) { }
+
+  logOut(): void {
+    localStorage.removeItem('planets_email');
+    this.planets.emailAdd(false);
+    this.router.navigate(["start"]);
+  }
 }
+

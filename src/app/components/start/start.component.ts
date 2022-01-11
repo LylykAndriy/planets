@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { PlanetsService } from '../../services/planets.service';
 import { Router } from '@angular/router';
 
@@ -10,16 +10,17 @@ import { Router } from '@angular/router';
 })
 export class StartComponent implements OnInit {
 
-  form: FormGroup = new FormGroup({
-    email: new FormControl(null, [Validators.required, Validators.pattern('^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+$')]),
+  public form = this.formBuilder.group({
+    email: [null, [Validators.required, Validators.pattern('^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+$')]],
   });
 
-  constructor(private planets: PlanetsService, private router: Router) { }
+  constructor(private planets: PlanetsService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
 
   onSubmit(): void {
+    localStorage.setItem('planets_email', this.form.get('email')?.value);
     this.planets.emailAdd(true);
     this.router.navigate(["planets"]);
   }

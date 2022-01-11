@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PlanetsListComponent } from './planets-list.component';
+import { HttpClient } from '@angular/common/http';
+import { of } from 'rxjs';
 
 describe('PlanetsListComponent', () => {
   let component: PlanetsListComponent;
@@ -8,7 +10,14 @@ describe('PlanetsListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PlanetsListComponent ]
+      declarations: [ PlanetsListComponent ],
+      providers: [
+        {
+          provide: HttpClient, useValue: {
+            get: () => of()
+          }
+        }
+      ]
     })
     .compileComponents();
   });

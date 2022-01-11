@@ -7,7 +7,7 @@ import { PlanetsService } from "./planets.service";
   providedIn: 'root'
 })
 export class IsEmailGuard implements CanActivate {
-  constructor(public planets: PlanetsService) {}
+  constructor(private planets: PlanetsService) {}
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {

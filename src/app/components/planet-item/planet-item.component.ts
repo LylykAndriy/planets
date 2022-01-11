@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Planet, PlanetsService } from '../../services/planets.service';
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-planet-item',
@@ -8,6 +9,8 @@ import { Planet, PlanetsService } from '../../services/planets.service';
   styleUrls: ['./planet-item.component.scss']
 })
 export class PlanetItemComponent implements OnInit {
+
+  private subscription: Subscription | undefined;
 
   public planet: Planet = {
     characters: '',
@@ -26,8 +29,15 @@ export class PlanetItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.planets.getPlanetItem(this.planetName).subscribe((planet: Planet) => {
+    this.subscription = this.planets.getPlanetItem(this.planetName).subscribe((planet: Planet) => {
       this.planet = planet;
     });
   }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
 }

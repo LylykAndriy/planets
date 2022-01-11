@@ -14,7 +14,7 @@ export class PlanetsService {
   constructor(private http: HttpClient) { }
 
   emailAdded(): boolean {
-    return this.isEmail;
+    return this.isEmail || (localStorage.getItem('planets_email') !== null);
   }
 
   emailAdd(isEmail: boolean): void {
