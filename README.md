@@ -10,11 +10,11 @@ npm install -g npm
 
 `https://nodejs.org/en/download/`
 
-##Install angular-cli globally
+## Install angular-cli globally
 
 npm install -g @angular/cli
 
-##Install packages
+## Install packages
 
 npm install
 
@@ -22,11 +22,11 @@ npm install
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-##issues
+## issues
 
 Single planet API always returns same info (for Kashyyyk)
 
-##questions
+## questions
 What are you looking to achieve in your new role?
 - new challenge after 7+ years work with single customer.
 
