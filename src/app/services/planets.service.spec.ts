@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
 import { PlanetsService } from './planets.service';
-import { HttpClient } from '@angular/common/http';
 
 describe('PlanetsService', () => {
   let service: PlanetsService;
@@ -10,7 +9,7 @@ describe('PlanetsService', () => {
     TestBed.configureTestingModule({
       providers: [
         {
-          provide: HttpClient, useValue: {}
+          provide: PlanetsService, useValue: {}
         }
       ]
     });

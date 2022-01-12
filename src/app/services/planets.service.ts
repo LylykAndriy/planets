@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 const PLANETS_URL = 'http://private-anon-4ab7e07a76-starhub.apiary-mock.com/api/planets';
 
@@ -9,16 +9,16 @@ const PLANETS_URL = 'http://private-anon-4ab7e07a76-starhub.apiary-mock.com/api/
 })
 export class PlanetsService {
 
-  private isEmail: boolean = false;
+  private emailChange = new BehaviorSubject(localStorage.getItem('planets_email') !== null);
+
+  public isEmailAdded$ = this.emailChange.asObservable();
 
   constructor(private http: HttpClient) { }
 
-  emailAdded(): boolean {
-    return this.isEmail || (localStorage.getItem('planets_email') !== null);
-  }
-
-  emailAdd(isEmail: boolean): void {
-    this.isEmail = isEmail;
+  public changeEmail(message: boolean, email?: string): void {
+    message ? localStorage.setItem('planets_email', email || '') : localStorage.removeItem('planets_email');
+    let result = message || (localStorage.getItem('planets_email') !== null);
+    this.emailChange.next(result);
   }
 
   public getPlanetsList(): Observable<Planet[]> {
@@ -28,6 +28,7 @@ export class PlanetsService {
   public getPlanetItem(planetName: string): Observable<Planet> {
     return this.http.get<Planet>(`${PLANETS_URL}/${planetName}`);
   }
+
 }
 
 export interface Planet {

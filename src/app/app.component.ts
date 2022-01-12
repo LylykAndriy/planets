@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PlanetsService } from "./services/planets.service";
 import { Router } from '@angular/router';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,14 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  constructor(private planets: PlanetsService, private router: Router) { }
+  public isLogIn: Observable<boolean>;
 
-  logOut(): void {
-    localStorage.removeItem('planets_email');
-    this.planets.emailAdd(false);
+  constructor(private planets: PlanetsService, private router: Router) {
+    this.isLogIn = this.planets.isEmailAdded$;
+  }
+
+  public logOut(): void {
+    this.planets.changeEmail(false);
     this.router.navigate(["start"]);
   }
 }

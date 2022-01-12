@@ -22,7 +22,7 @@ export class PlanetItemComponent implements OnInit {
     system: ''
   };
 
-  private planetName: string;
+  public planetName: string;
 
   constructor(private planets: PlanetsService, private activatedRoute: ActivatedRoute) {
     this.planetName = this.activatedRoute.snapshot.params['planetName'];

@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { HttpClient } from '@angular/common/http';
+import { PlanetsService } from './services/planets.service';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -14,7 +14,7 @@ describe('AppComponent', () => {
       ],
       providers: [
         {
-          provide: HttpClient, useValue: {}
+          provide: PlanetsService, useValue: {}
         },
       ]
     }).compileComponents();
